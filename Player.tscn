@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://smfdslairxxp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_gtrlo"]
+[ext_resource type="Texture2D" uid="uid://0446bxxnlx0e" path="res://icon.svg" id="1_jbapq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwlaw"]
+radius = 87.023
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gtrlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_gwlaw")
+disabled = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+texture = ExtResource("1_jbapq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+disabled = true

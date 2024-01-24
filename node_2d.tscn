@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bya2o5w1pew08"]
+
+[ext_resource type="PackedScene" uid="uid://smfdslairxxp" path="res://Player.tscn" id="1_vqil8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6ttd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vqil8")]
+position = Vector2(1307, 340)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(200, 0)
+shape = SubResource("CircleShape2D_q6ttd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(43, 219)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(268, -74, 244, 100, -340, 110, -373, 81)
